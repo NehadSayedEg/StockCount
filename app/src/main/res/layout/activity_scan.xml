@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".ui.ScanActivity.ScanActivity">
+
+    <EditText
+        android:id="@+id/barcodeEt"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_edittext"
+        android:defaultFocusHighlightEnabled="true"
+        android:elevation="@dimen/_10sdp"
+        android:focusable="true"
+        android:focusedByDefault="true"
+        android:hint="@string/barcodeET"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="@dimen/_4ssp"
+        android:selectAllOnFocus="true"
+        android:textAlignment="center"
+        android:textColor="@color/orange4"
+        android:textColorHint="@color/orange1"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scanRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barcodeEt"
+        />
+    <ImageView
+        android:id="@+id/exportReportBtn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/background_add_btn"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_baseline_attach_file_24"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_10sdp"
+
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

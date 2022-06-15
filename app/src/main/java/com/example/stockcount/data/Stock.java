@@ -24,6 +24,8 @@ public class Stock implements Serializable {
 
 
 
+
+
 //    @ColumnInfo(name = "qty")
 //    private double upqty ;
 
@@ -71,6 +73,9 @@ public class Stock implements Serializable {
     public void setQty(double qty) {
         this.qty = qty;
     }
+
+
+
 
     @Nullable
     @Override

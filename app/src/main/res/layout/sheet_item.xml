@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/sheetItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:background="@drawable/item_sheet_background"
+    android:padding="@dimen/_10sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/deleteSheetBtn"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/background_add_btn"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:padding="@dimen/_2sdp"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_baseline_delete_24"/>
+
+
+
+
+    <TextView
+        android:id="@+id/sheetName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:text="Sheet Name"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textColor="@color/gery"
+        />
+
+
+        <TextView
+            android:id="@+id/sheetDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12ssp"
+            android:text="Sheet Date"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:textColor="@color/orange1"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+
+
+
+</LinearLayout>

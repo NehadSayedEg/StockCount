@@ -9,8 +9,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,9 +22,13 @@ import com.example.stockcount.R;
 import com.example.stockcount.Util.ExcelUtil;
 import com.example.stockcount.Util.LanguageManager;
 import com.example.stockcount.databinding.ActivityMainBinding;
+import com.example.stockcount.ui.HomeActivity.HomeActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -43,12 +45,26 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     // private ExcelAdapter excelAdapter;
     ProgressDialog progressDialog;
+    String macAddress ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_main);
         mContext = this;
+        macAddress = getMacAddress();
+        Log.e(" mac Address" , macAddress);
+        String  macString = "26:53:23:9A:5D:10:" ;
+        if(macAddress.equals(macString)){
+            Log.e(" mac Address" , " is correct");
+
+        }else{
+            Log.e(" mac Address" , " is not correct");
+            finish();
+
+        }
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -271,18 +287,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * refresh RecyclerView
-     */
-    private void updateUI() {
-        runOnUiThread(() -> {
-
-
-            Intent intent = new Intent(this , HomeActivity.class);
-            startActivity(intent);
-
-        });
-    }
 
 
     private void assetsDBSize() {
@@ -302,6 +306,39 @@ public class MainActivity extends AppCompatActivity {
 
         }).start();
 
+    }
+
+    public String getMacAddress(){
+        try{
+            List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
+
+            String stringMac = "";
+
+            for(NetworkInterface networkInterface : networkInterfaceList)
+            {
+                if(networkInterface.getName().equalsIgnoreCase("wlon0"));
+                {
+                    for(int i = 0 ;i <networkInterface.getHardwareAddress().length; i++){
+                        String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i]& 0xFF);
+
+                        if(stringMacByte.length() == 1)
+                        {
+                            stringMacByte = "0" +stringMacByte;
+                        }
+
+                        stringMac = stringMac + stringMacByte.toUpperCase() + ":";
+                    }
+                    break;
+                }
+
+            }
+            return stringMac;
+        }catch (SocketException e)
+        {
+            e.printStackTrace();
+        }
+
+        return  "0";
     }
 
 

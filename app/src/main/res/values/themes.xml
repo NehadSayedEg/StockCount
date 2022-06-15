@@ -15,20 +15,20 @@
     </style>
 
     <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="android:windowBackground">@color/orange9</item>
-        <item name="colorSurface">@color/white</item>
+        <item name="android:windowBackground">@color/orange8</item>
+        <item name="colorSurface">@color/orange8</item>
         <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
         <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyle</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
     </style>
     <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:textColor">@color/orange1</item>
+        <item name="android:textColor">@color/gery</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
     <style name="BodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
-        <item name="android:textColor">@color/orange1</item>
+        <item name="android:textColor">@color/gery</item>
         <item name="android:textSize">14sp</item>
     </style>
     <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
@@ -36,7 +36,15 @@
         <item name="rippleColor">#ad1457</item>
     </style>
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/orange1</item>
+        <item name="android:textColor">@color/gery</item>
         <item name="rippleColor">@color/orange9</item>
     </style>
+
+
+    <style name="AlertDialogStyleWithEditText" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:colorAccent">@color/orange1</item>
+        <item name="android:textColor">@color/gery</item>
+        <item name="android:textColorPrimary">@color/gery</item>
+    </style>
+
 </resources>
